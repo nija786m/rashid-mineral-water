@@ -1,1 +1,236 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rashid Mineral Water | Supaul</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', 'Segoe UI', sans-serif; }
+  body { background: #f0f8ff; color: #1a2233; }
+  header { background: linear-gradient(135deg, #0077ff, #00b4d8); color: white; padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.1); flex-wrap: wrap; gap: 10px; }
+  header h1 { font-size: 22px; letter-spacing: 1px; }
+  header nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; transition: 0.3s; font-size: 15px; }
+  header nav a:hover { color: #ffe066; }
+  .hero { text-align: center; padding: 90px 20px; background: linear-gradient(135deg, #d6efff, #f0f8ff); }
+  .hero h2 { font-size: 46px; margin-bottom: 15px; color: #0077ff; }
+  .hero h2 span { color: #00b4d8; }
+  .hero p { font-size: 18px; color: #555; max-width: 600px; margin: 0 auto 35px; line-height: 1.6; }
+  .hero .hero-btn { background: #0077ff; color: white; border: none; padding: 15px 40px; border-radius: 30px; font-size: 16px; font-weight: 700; cursor: pointer; transition: 0.3s; box-shadow: 0 8px 20px rgba(0,119,255,0.3); }
+  .hero .hero-btn:hover { background: #005fcc; transform: translateY(-3px); }
+  .features { display: flex; gap: 25px; justify-content: center; flex-wrap: wrap; padding: 50px 20px; max-width: 1000px; margin: auto; }
+  .feature { background: white; padding: 25px 20px; border-radius: 15px; text-align: center; flex: 1; min-width: 180px; box-shadow: 0 5px 20px rgba(0,119,255,0.08); transition: 0.3s; }
+  .feature:hover { transform: translateY(-5px); }
+  .feature .f-icon { font-size: 35px; margin-bottom: 10px; }
+  .feature h4 { color: #0077ff; margin-bottom: 5px; font-size: 16px; }
+  .feature p { color: #777; font-size: 13px; }
+  section { padding: 60px 20px; max-width: 1000px; margin: auto; }
+  section h2 { text-align: center; color: #0077ff; margin-bottom: 10px; font-size: 30px; }
+  section .subtitle { text-align: center; color: #777; margin-bottom: 40px; font-size: 15px; }
+  .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; max-width: 700px; margin: auto; }
+  .product { background: white; padding: 40px 25px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: 0.3s; border: 2px solid transparent; }
+  .product:hover { transform: translateY(-8px); border-color: #0077ff; box-shadow: 0 15px 40px rgba(0,119,255,0.25); }
+  .product .emoji { font-size: 70px; margin-bottom: 15px; }
+  .product h4 { margin: 10px 0 10px; color: #333; font-size: 22px; }
+  .product .price { color: #0077ff; font-weight: 800; font-size: 32px; margin-bottom: 20px; }
+  .product .price small { font-size: 15px; color: #888; font-weight: 500; }
+  .product button { background: #e0f2ff; color: #0077ff; border: none; padding: 12px 28px; border-radius: 25px; font-size: 15px; font-weight: 700; cursor: pointer; transition: 0.3s; }
+  .product button:hover { background: #0077ff; color: white; }
+  .form-box { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 35px rgba(0,119,255,0.12); max-width: 550px; margin: auto; border-top: 5px solid #0077ff; }
+  .form-box h3 { text-align: center; color: #0077ff; margin-bottom: 25px; font-size: 22px; }
+  .form-box label { display: block; margin: 14px 0 6px; font-weight: 600; color: #333; font-size: 14px; }
+  .form-box input, .form-box select, .form-box textarea { width: 100%; padding: 12px 14px; border: 2px solid #e0e8f5; border-radius: 10px; font-size: 15px; transition: 0.3s; font-family: inherit; background: #f9fcff; }
+  .form-box input:focus, .form-box select:focus, .form-box textarea:focus { border-color: #0077ff; outline: none; background: white; }
+  .form-box button { width: 100%; margin-top: 25px; background: linear-gradient(135deg, #0077ff, #00b4d8); color: white; border: none; padding: 15px; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,119,255,0.3); }
+  .form-box button:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,119,255,0.4); }
+  .payment-box { background: white; padding: 40px 30px; border-radius: 20px; text-align: center; max-width: 420px; margin: auto; box-shadow: 0 10px 35px rgba(0,119,255,0.15); border: 3px solid #0077ff; }
+  .payment-box h3 { color: #0a1a33; margin-bottom: 5px; font-size: 22px; }
+  .payment-box .owner-name { color: #0077ff; font-weight: 700; font-size: 16px; margin-bottom: 18px; }
+  .payment-box .upi-id { background: #e0f2ff; color: #0077ff; padding: 10px 18px; border-radius: 8px; display: inline-block; font-weight: 700; margin: 12px 0 22px; font-size: 15px; cursor: pointer; transition: 0.3s; border: 2px dashed #0077ff; }
+  .payment-box .upi-id:hover { background: #cce6ff; }
+  .payment-box .qr-img { width: 270px; max-width: 100%; border-radius: 12px; border: 2px solid #e0e8f5; padding: 8px; background: white; }
+  .payment-box .note { margin-top: 20px; font-size: 13px; color: #888; font-style: italic; line-height: 1.6; }
+  .payment-box .wa-pay-btn { display: inline-block; margin-top: 18px; background: #25d366; color: white; padding: 12px 28px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 14px; transition: 0.3s; }
+  .payment-box .wa-pay-btn:hover { background: #1eb356; transform: scale(1.05); }
+  .contact-info { text-align: center; background: white; padding: 35px; border-radius: 18px; box-shadow: 0 8px 25px rgba(0,0,0,0.06); }
+  .contact-info p { margin: 12px 0; font-size: 16px; color: #444; }
+  .contact-info a { color: #0077ff; text-decoration: none; font-weight: 700; }
+  .contact-info a:hover { text-decoration: underline; }
+  .whatsapp { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; box-shadow: 0 5px 20px rgba(37,211,102,0.5); transition: 0.3s; z-index: 200; }
+  .whatsapp:hover { transform: scale(1.1); }
+  footer { background: #0a1a33; color: #aab; text-align: center; padding: 30px 20px; margin-top: 40px; font-size: 14px; line-height: 1.8; }
+  footer strong { color: white; }
+  @media (max-width: 600px) {
+    header { padding: 15px 20px; }
+    header h1 { font-size: 17px; }
+    header nav a { margin: 0 8px; font-size: 13px; }
+    .hero { padding: 60px 20px; }
+    .hero h2 { font-size: 30px; }
+    .hero p { font-size: 15px; }
+    section { padding: 45px 15px; }
+    section h2 { font-size: 24px; }
+    .form-box { padding: 25px 20px; }
+    .product .emoji { font-size: 55px; }
+    .product .price { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
 
+<header>
+  <h1>💧 Rashid Mineral Water</h1>
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#order">Order</a>
+    <a href="#payment">Payment</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h2>Rashid <span>Mineral Water</span></h2>
+  <p>Supaul ki sabse fresh aur pure mineral water — ghar tak delivery. Order karein aur paayein bilkul saaf, thanda aur swasth paani.</p>
+  <button class="hero-btn" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">💧 Order Now</button>
+</div>
+
+<div class="features">
+  <div class="feature">
+    <div class="f-icon">🚚</div>
+    <h4>Free Home Delivery</h4>
+    <p>Supaul mein ghar tak muft delivery</p>
+  </div>
+  <div class="feature">
+    <div class="f-icon">💧</div>
+    <h4>100% Pure</h4>
+    <p>RO + UV filtered mineral water</p>
+  </div>
+  <div class="feature">
+    <div class="f-icon">⚡</div>
+    <h4>Fast Service</h4>
+    <p>Order karein, turant delivery</p>
+  </div>
+  <div class="feature">
+    <div class="f-icon">💰</div>
+    <h4>Best Price</h4>
+    <p>Supaul mein sabse sasta rate</p>
+  </div>
+</div>
+
+<section id="products">
+  <h2>💧 Hamare Products</h2>
+  <p class="subtitle">Fresh aur pure mineral water — 2 sizes mein available</p>
+  <div class="products">
+    <div class="product">
+      <div class="emoji">🥤</div>
+      <h4>1 Litre Bottle</h4>
+      <div class="price">₹9.50 <small>/ bottle</small></div>
+      <button onclick="selectProduct('1L Bottle - ₹9.50')">Order Karein</button>
+    </div>
+    <div class="product">
+      <div class="emoji">💧</div>
+      <h4>500ml Bottle</h4>
+      <div class="price">₹5.50 <small>/ bottle</small></div>
+      <button onclick="selectProduct('500ml Bottle - ₹5.50')">Order Karein</button>
+    </div>
+  </div>
+</section>
+
+<section id="order">
+  <h2>📝 Order Karein</h2>
+  <p class="subtitle">Form bhar ke confirm karein — order seedha WhatsApp par aayega</p>
+  <div class="form-box">
+    <h3>Water Order Form</h3>
+    <label>Naam *</label>
+    <input type="text" id="wName" placeholder="Aapka pura naam">
+    <label>Phone Number *</label>
+    <input type="tel" id="wPhone" placeholder="10 digit mobile number">
+    <label>Delivery Address *</label>
+    <textarea id="wAddress" rows="2" placeholder="Ghar ka poora address, landmark ke saath"></textarea>
+    <label>Product Chunein *</label>
+    <select id="wProduct">
+      <option value="1L Bottle - ₹9.50">1 Litre Bottle - ₹9.50</option>
+      <option value="500ml Bottle - ₹5.50">500ml Bottle - ₹5.50</option>
+    </select>
+    <label>Quantity *</label>
+    <input type="number" id="wQty" value="1" min="1">
+    <label>Koi Vishesh Suchna (optional)</label>
+    <textarea id="wNote" rows="2" placeholder="Jaise: shaam 5 baje ke baad delivery karein"></textarea>
+    <button onclick="orderWater()">✅ Order Confirm Karein</button>
+  </div>
+</section>
+
+<section id="payment">
+  <h2>💳 Payment Karein</h2>
+  <p class="subtitle">Online payment ya Cash on Delivery — dono available</p>
+  <div class="payment-box">
+    <h3>Scan & Pay</h3>
+    <p class="owner-name">Md Nijamuddin</p>
+    <div class="upi-id" onclick="copyUPI()" title="Click karke copy karein">📋 8015672079@ptyes</div>
+    <br>
+    <img src="https://i.ibb.co/QvJcR4YS/Account-QRCode-Indus-Ind-Bank-2079-LIGHT-THEME.png" alt="Rashid Mineral Water UPI QR Code" class="qr-img">
+    <p class="note">Kisi bhi UPI app (Paytm, PhonePe, GPay, BHIM) se scan karein<br>Payment ke baad screenshot WhatsApp par bhejein</p>
+    <a href="https://wa.me/919262357255?text=Payment%20ka%20screenshot%20bhej%20raha%20hoon" target="_blank" class="wa-pay-btn">💬 Screenshot Bhejein</a>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>📞 Contact Karein</h2>
+  <p class="subtitle">Koi bhi sawaal ho — humein call ya WhatsApp karein</p>
+  <div class="contact-info">
+    <p>📱 Phone: <a href="tel:+919262357255">+91 92623 57255</a></p>
+    <p>💬 WhatsApp: <a href="https://wa.me/919262357255" target="_blank">Chat Karein</a></p>
+    <p>📍 Address: Busbitti Road, Ward No. 20,<br>Near Madrasha Mohammadiya, Supaul</p>
+    <p>⏰ Timing: Subah 8 baje se Raat 10 baje tak</p>
+  </div>
+</section>
+
+<a class="whatsapp" href="https://wa.me/919262357255" target="_blank" title="WhatsApp">💬</a>
+
+<footer>
+  <strong>💧 Rashid Mineral Water</strong><br>
+  Busbitti Road, Ward No. 20, Near Madrasha Mohammadiya, Supaul<br>
+  © 2026 Rashid Mineral Water | Sabhi adhikar surakshit
+</footer>
+
+<script>
+function selectProduct(product) {
+  document.getElementById('wProduct').value = product;
+  document.getElementById('order').scrollIntoView({behavior:'smooth'});
+}
+
+function orderWater() {
+  const name = document.getElementById('wName').value.trim();
+  const phone = document.getElementById('wPhone').value.trim();
+  const address = document.getElementById('wAddress').value.trim();
+  const product = document.getElementById('wProduct').value;
+  const qty = document.getElementById('wQty').value;
+  const note = document.getElementById('wNote').value.trim();
+
+  if(!name || !phone || !address) {
+    alert('Kripya Naam, Phone aur Address zaroor bharein!');
+    return;
+  }
+  if(phone.length !== 10 || isNaN(phone)) {
+    alert('Kripya sahi 10 digit mobile number daalein!');
+    return;
+  }
+
+  let msg = `*💧 New Order — Rashid Mineral Water*%0A%0A`;
+  msg += `*Naam:* ${name}%0A`;
+  msg += `*Phone:* ${phone}%0A`;
+  msg += `*Address:* ${address}%0A`;
+  msg += `*Product:* ${product}%0A`;
+  msg += `*Quantity:* ${qty}%0A`;
+  if(note) msg += `*Note:* ${note}%0A`;
+  msg += `%0A_Kripya order confirm karein_`;
+
+  window.open(`https://wa.me/919262357255?text=${msg}`, '_blank');
+}
+
+function copyUPI() {
+  navigator.clipboard.writeText('8015672079@ptyes');
+  alert('✅ UPI ID copy ho gayi: 8015672079@ptyes');
+}
+</script>
+
+</body>
+</html>
